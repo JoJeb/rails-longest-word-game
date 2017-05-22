@@ -1,0 +1,13 @@
+<h1>Welcome to the longest word-game</h1>
+<h2>Here are your letter. Now create the longest word you can think of :</h2>
+<ul>
+  <% @letters.each do |letter| %>
+    <%= letter %>
+  <% end %>
+</ul>
+<form action="/score">
+  <label for="answer">Enter your word</label>
+  <input type="text" id="answer" name="answer" placeholder="Word">
+  <input type="submit" value="Submit">
+  <input type="hidden" value="<%= @start_time %>" name="start_time">
+</form>
